@@ -3,6 +3,8 @@ import torch
 
 
 def main():
+    # https://huggingface.co/google/flan-t5-xxl?text=Q%3A+Can+Geoffrey+Hinton+have+a+conversation+with+George+Washington%3F+Give+the+rationale+before+answering.
+    
     model = GPTJForCausalLM.from_pretrained(
         "EleutherAI/gpt-j-6B",
         revision="float16",
