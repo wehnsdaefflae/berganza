@@ -1,23 +1,25 @@
-from transformers import GPTJForCausalLM, AutoTokenizer
-import torch
+# coding=utf-8
+import json
+
+import requests
+
+# API_URL = "https://api-inference.huggingface.co/models/gpt2"
+API_URL = "https://api-inference.huggingface.co/EleutherAI/gpt-j-6B"
+
+
+def query(payload: str, token: str) -> str:
+    headers = {"Authorization": f"Bearer {token:s}"}
+    data = json.dumps(payload)
+    response = requests.request("POST", API_URL, headers=headers, data=data)
+    return json.loads(response.content.decode("utf-8"))
 
 
 def main():
-    model = GPTJForCausalLM.from_pretrained(
-        "EleutherAI/gpt-j-6B",
-        revision="float16",
-        torch_dtype=torch.float16,
-        low_cpu_mem_usage=True)
-    
-    tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
-    context = """In a shocking finding, scientists discovered a herd of unicorns living in a remote, 
-                previously unexplored valley, in the Andes Mountains. Even more surprising to the 
-                researchers was the fact that the unicorns spoke perfect English."""
-
-    input_ids = tokenizer(context, return_tensors="pt").input_ids
-    gen_tokens = model.generate(input_ids, do_sample=True, temperature=.9, max_length=100)
-    gen_text = tokenizer.batch_decode(gen_tokens)[0]
-    print(gen_text)
+    with open("resources/config.json", mode="r") as file:
+        d = json.load(file)
+    t = d["token"]
+    data = query("Can you please let us know more details about your ", t)
+    print(data)
 
 
 if __name__ == "__main__":
