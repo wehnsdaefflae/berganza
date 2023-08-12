@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <!-- webapp stuff -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="berganza.live" />
+    
+    <!-- whatsapp (https://stackoverflow.com/questions/19778620/provide-an-image-for-whatsapp-link-sharing) -->
+    <meta name="description" content="Überall und jederzeit verfügbar gibt Dir berganza.live kostenlos, anonym und frei Schnauze eine andere Perspektive auf die Welt von heute." />
+    <meta property="og:title" content="berganza.live" />
+    <meta property="og:site-name" content="berganza.live" />
+    <meta property="og:url" content="https://berganza.live/" />
+    <meta property="og:description" content="Chatte mit einem Hund aus dem Anfang des 19ten Jahrhunderts." />
+    <meta property="og:image" content="https://berganza.live/android-chrome-512x512.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de-DE" />
+
+    <!-- twitter (https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started) -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@wehnsdaefflae" />
+    <meta name="twitter:creator" content="@wehnsdaefflae" />
+    <meta name="twitter:title" content="berganza.live" />
+    <meta name="twitter:description" content="Überall und jederzeit verfügbar gibt Dir berganza.live kostenlos, anonym und frei Schnauze eine andere Perspektive auf die Welt von heute." />
+    <meta name="twitter:image" content="https://berganza.live/android-chrome-512x512.png" />
+    
+    <!-- facebook (https://developers.facebook.com/docs/sharing/webmasters) -->
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+
+    <!-- check here: https://developers.facebook.com/tools/debug/?q=https%3A%2F%2Fberganza.live -->
+
+    <!--- favicon -->
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png?v=1.0"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1.0"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1.0"/>
+    <link rel="manifest" href="/site.webmanifest?v=1.0"/>
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1.0" color="#7d42de"/>
+    <link rel="shortcut icon" href="/favicon.ico?v=1.0"/>
+    <meta name="msapplication-TileColor" content="#0c001d"/>
+    <meta name="theme-color" content="#000000"/>
+
+      
+    <title>berganza.live – Kostenlos, anonym und frei Schnauze</title>
+
+    <link rel="alternate stylesheet" type="text/css" title="Hell" href="style/main.css">
+    <link rel="stylesheet" type="text/css" title="Dunkel" href="style/dark.css">
+    <link rel="stylesheet" type="text/css" href="style/print.css" media="print">
+    <script type="text/javascript" src="script/bubbles.js" defer></script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+      var u="//berganza.live/matomo/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+
+  </head>
+
+  <body>
+    <header>
+      <div class="chatheader" id="completeHeader">
+        <div class="headerleft">
+          <div class="avatar" id="avatar">
+            <img src="android-chrome-192x192.png" alt="Berganza" class="profilePic" draggable="false"/>
+            <div id="newMessage" hidden>
+            </div>
+          </div>
+
+          <div class="headertext" id="headertext">
+            <div class="headername">
+              berganza
+            </div>
+            <div class="headerstatus" id="status">
+              live
+            </div>  
+          </div>
+        </div>
+
+        <button id="printButton" class="headerright button print-color-svg">          
+        </button>
+
+      </a>
+
+      </div>
+    </header>
+
+    <main>
+      <div id="mainChat">
+        <div class="printTitle">
+          <h2>
+            <div class="stretchTitle">Chatprotokoll</div><br/>
+            <div class="smallTitle">von</div><br>
+            <div class="stretchTitle">den neuesten Schicksalen</div><br/>
+            <div class="smallTitle">des</div><br/>
+            <div class="bigTitle">Hundes Berganza</div>
+          </h2>
+          <hr class="print"/>
+        </div>
+
+        <div id="chat">
+          <div id="messageContainer">
+          </div>
+
+          <div id="indicator" class="message berganza indicator" hidden>
+            <span class="text">Berganza schreibt<span id="dots">.</span></span>
+          </div>  
+        </div>
+
+        <div id="inputBackground">
+          <div id="inputContainer">
+            <textarea id="messageInput" placeholder="Schreib eine Nachricht" autocomplete="off" autofocus="true" maxlength="200" autocomplete="off" rows="1" disabled></textarea>
+            <button id="sendButton" class="button send-color-svg" disabled>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mainInfo">
+        <h2>
+          Informationen
+        </h2>
+
+        <h3>
+          Idee & Umsetzung
+        </h3>
+        <div id="sebastian" class="author">
+          <div class="name">
+              Sebastian Magnus (<a href="https://www.instagram.com/sebastianmagnus/" target="_blank">Instagram</a>)
+          </div>
+          <div class="insta">
+          </div>
+          <div class="facebook">
+          </div>
+          <div class="website">
+          </div>
+          <div class="email">
+          </div>
+        </div>
+        <div id="mark" class="author">
+          <div class="name">
+            Mark Wernsdorfer (<a href="https://mark-wernsdorfer.de" target="_blank">Website</a>, <a href="https://www.instagram.com/wehnsdaefflae/" target="_blank">Instagram</a>)
+          </div>
+          <div class="insta">
+          </div>
+          <div class="facebook">
+          </div>
+          <div class="website">
+          </div>
+          <div class="email">
+          </div>
+        </div>
+        <br/>
+        
+        <hr/>
+        <h3>
+          Rechte
+        </h3>
+        berganza.live © 2022 Sebastian Magnus und Mark Wernsdorfer
+        <a href="https://de.wikisource.org/wiki/Nachricht_von_den_neuesten_Schicksalen_des_Hundes_Berganza" target="_blank">Textquelle</a>
+        <br/>
+        
+        <hr/>
+        <h3>
+          Disclaimer
+        </h3>
+        <p>
+          Im Jahr 1814 erschien der Text <i>Nachricht von den neuesten Schicksalen des Hundes Berganza</i> des Schriftstellers, Komponisten und Zeichners  E.T.A. Hoffmann. Es handelt sich um ein satirisches Kunstgespräch zwischen einem Ich-Erzähler und dem sprechenden Hund Berganza.
+        </p>
+        <p>
+          200 Jahre nach Hoffmanns Tod widmet das Kulturamt der Stadt Bamberg dem Dichter die Ausstellung <a href="https://www.stadt.bamberg.de/Unsere-Stadt/Kultur-und-Kunst-/Phantaskop-Hoffmann-inspiriert-.php?object=tx,2730.5&ModID=7&FID=2730.19938.1&NavID=1829.8&La=1" target="_blank">„Phantaskop: Hoffmann inspiriert!“</a>.
+        </p>
+        <p>
+          Im Rahmen dieser Ausstellung schufen Dr. Mark Wernsdorfer und Sebastian Magnus den von Künstlicher Intelligenz gesteuerten Chatbot berganza.live. Zu Grunde lag die zweite Auflage von <a href="https://de.wikisource.org/wiki/Nachricht_von_den_neuesten_Schicksalen_des_Hundes_Berganza" target="_blank">ETA Hoffmanns Originaltext</a> aus dem Jahr 1819.
+        </p>
+        <p>
+          Berganza vertritt Einstellungen und Ansichten aus dem vorletzten Jahrhundert. Da es sich beim Originaltext um ein Gespräch mit Hoffmann handelt, weigert sich Berganza zudem, Gesprächspartnerinnen in der weiblichen Form anzusprechen.
+        </p>
+      </div>
+    </div>
+
+    </main>
+
+    <footer>
+    </footer>
+
+  </body>
+</html>

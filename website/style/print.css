@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'DesMalersFraktur';
+  src:url('../assets/webfonts_DesMalersFraktur/DesMalersFraktur.ttf.woff') format('woff'),
+      url('../assets/webfonts_DesMalersFraktur/DesMalersFraktur.ttf.svg#DesMalersFraktur') format('svg'),
+      url('../assets/webfonts_DesMalersFraktur/DesMalersFraktur.ttf.eot'),
+      url('../assets/webfonts_DesMalersFraktur/DesMalersFraktur.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+header, footer, .info, .message.indicator, h1, #inputContainer, #footerText, .chatheader, #information, #mainInfo {
+  display: none;
+}
+
+/* 
+todo:
+print css only works second time
+first message each page is cut off (see pdf in berganza_logs)
+*/
+
+html {
+  font-family: 'DesMalersFraktur';
+  height: auto;
+  filter: blur(.85px) brightness(70%) contrast(700%);
+  width: 100%;
+  overflow-y:   visible;
+  /*
+  background: linear-gradient(rgba(255,255,255,0), rgba(0,0,0,1)),
+  url("../assets/noise.svg");
+  */
+}
+
+body {
+  font-family: 'DesMalersFraktur';
+  background:   white;
+  overflow-y:   visible;
+}
+
+main {
+  height:     auto;
+  overflow-y: visible;
+  position:   static;
+}
+
+chat {
+  position:     static;
+  overflow-y:   visible;
+}
+
+.printTitle {
+  display:      block;
+}
+
+h2 {
+  font-family:  'DesMalersFraktur';
+  text-align:   center;
+  font-size:    30px;
+  font-weight:  100;
+  line-height:  75%;
+  margin-top:   100px;
+}
+
+h2 > .smallTitle {
+  font-size:      20px;
+  letter-spacing: 2px;
+}
+
+h2 > .stretchTitle {
+  letter-spacing: 12px;
+}
+
+h2 > .bigTitle {
+  font-size:      35px;
+  font-weight:    150;
+  letter-spacing: 5px;
+}
+
+h2 + hr {
+  width: 100px;
+  height: 1px;
+  
+  border:     0; 
+  border-top: 2px solid rgb(0, 0, 0);
+  margin:     0 auto; 
+  margin-top: 50px;
+  padding:    0;
+}
+
+.printTitle + #messageContainer {
+  margin-top: 100px;
+}
+
+.message {
+  animation:          none;
+  -webkit-box-shadow: none;
+	-moz-box-shadow:    none;
+  box-shadow:         none;
+  font-family:        'DesMalersFraktur';
+  color:            black;
+  text-indent:        30px;
+  line-height:        160%;
+  font-size:          22px;
+  hyphens:            auto; 
+  text-align:         justify;
+  letter-spacing:     1px;
+  page-break-inside:  avoid;
+  display:            block;
+}
+
+.message.me, .message.berganza {
+  background: white;
+  margin:       0;
+  padding:      0;
+}
+
+.message.me::before {
+  content:        "Ich. ";
+  letter-spacing: 3px;
+}
+
+.message.berganza::before {
+  content:        "Berganza. ";
+  letter-spacing: 3px;
+}

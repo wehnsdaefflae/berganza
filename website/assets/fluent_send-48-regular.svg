@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   fill="none"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="fluent_send-48-regular.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="8.7604167"
+     inkscape:cx="-4.508918"
+     inkscape:cy="14.668252"
+     inkscape:window-width="1920"
+     inkscape:window-height="1010"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="M 8.4864554,24.00261 0.13085451,2.5192015 C -0.44997664,1.0254458 1.0070235,-0.40432702 2.4492568,0.1050757 L 2.6781436,0.20105014 46.978851,22.348896 c 0.285738,0.142725 0.529392,0.357073 0.70758,0.622111 0.17794,0.265037 0.284262,0.571665 0.308382,0.8901 0.02388,0.318438 -0.03493,0.637617 -0.1713,0.926277 -0.136095,0.288908 -0.345054,0.537456 -0.605936,0.721284 L 46.978851,25.651399 2.6781436,47.799345 C 1.2432937,48.515462 -0.31707469,47.196429 0.05701995,45.712515 L 0.1308544,45.478732 8.4864551,24.00261 0.1308544,2.5192015 Z M 5.3066507,5.6445226 11.73025,22.156948 h 16.310058 c 0.445959,0 0.876908,0.161679 1.2131,0.45477 0.336193,0.293091 0.554743,0.698151 0.615534,1.13988 l 0.01721,0.251012 c -2.46e-4,0.446401 -0.16194,0.877795 -0.455805,1.213951 -0.293616,0.336156 -0.699213,0.554436 -1.141482,0.614483 l -0.248576,0.01721 H 11.725327 L 5.3041898,42.360795 42.027019,24.00261 5.3041898,5.6445226 Z"
+     fill="#000000"
+     id="path2"
+     style="fill:#ffffff;fill-opacity:1;stroke-width:2.461" />
+</svg>

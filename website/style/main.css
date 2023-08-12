@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+  font-family: 'DesMalersFraktur';
+  src:url('../assets/webfonts_DesMalersFraktur/DesMalersFraktur.ttf.woff') format('woff'),
+      url('../assets/webfonts_DesMalersFraktur/DesMalersFraktur.ttf.svg#DesMalersFraktur') format('svg'),
+      url('../assets/webfonts_DesMalersFraktur/DesMalersFraktur.ttf.eot'),
+      url('../assets/webfonts_DesMalersFraktur/DesMalersFraktur.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --gap-small:    10px;
+  --gap-big:      50px;
+  --max-width:    650px;
+  --button-size:  48px;
+
+  touch-action: pan-x pan-y;
+  height: 100% 
+}
+
+@-webkit-keyframes peachy {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
+}
+@-moz-keyframes peachy {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
+}
+@-o-keyframes peachy {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
+}
+@keyframes peachy {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
+}
+
+html {
+  height:     max(300px, 100%);
+
+  overflow: hidden;
+  overscroll-behavior-y:  contain;
+
+  font-family:    'Roboto', sans-serif;
+  font-size:      16px;
+
+  background:         linear-gradient(0deg, peachpuff 40%, lightcyan 60%);
+
+  -webkit-animation:  peachy 10s ease infinite;
+  -moz-animation:     peachy 10s ease infinite;
+  -o-animation:       peachy 10s ease infinite;
+  animation:          peachy 10s ease infinite;
+
+  background-size:    140% 140%;
+
+}
+
+body {
+  height:     100%;
+
+  margin:     0;
+
+  overscroll-behavior-y: contain;
+  
+  display:          flex;
+  flex-direction:   column;
+  align-items:      center;
+}
+
+header {
+  position:         absolute;
+  width:            min(var(--max-width), 100%);
+  background:       linear-gradient(0deg, rgba(224, 255, 255, 0.0) 0%, rgba(224, 255, 255, 1.0) 50%);
+  z-index:          3;
+}
+
+.chatheader {
+  width:            100%;
+  display:          flex;
+}
+
+.headerleft {
+  width:          100%;
+  margin:         10px;
+  display:        flex;
+  flex-direction: row;
+  align-items:    center;
+  cursor:         default;
+}
+
+.headerright {
+  flex-grow:        1;
+}
+
+.profilePic {
+  clip-path:  circle();
+  width:      48px;
+  height:     48px;
+}
+
+.avatar {
+  position: relative;
+  cursor:   pointer;
+
+}
+
+#newMessage {
+  content:    '';
+
+  top:        -.5em;
+  right:      -.5em;
+  
+  width:                  1em;
+  height:                 1em;
+  -moz-border-radius:     50%;
+  -webkit-border-radius:  50%;
+  border-radius:          50% 50% 50% 0;
+
+  background-color:       #ffffff;
+
+  border-style: solid;
+
+  position:   absolute;
+  z-index:    4;
+}
+
+.headertext {
+  margin:     10px;
+  cursor:     pointer;
+}
+
+.headername {
+  font-size:    x-large;
+  font-weight:  bold;
+  font-family:  'DesMalersFraktur';
+}
+
+.headerstatus {
+  font-size: 14px;
+}
+
+.headerstatus::before {
+  content:                '';
+  display:                inline-block;
+  width:                  .5em;
+  height:                 .5em;
+  margin-right:           5px;
+  -moz-border-radius:     50%;
+  -webkit-border-radius:  50%;
+  border-radius:          50%;
+  background-color:       #1cd368;
+}
+
+.button {
+  background: transparent;
+  border:     0;
+  margin:     auto;
+  padding:    16px;
+}
+
+main {
+  height:   100%;
+  width:    100%;
+  position: relative;
+}
+
+#mainChat {
+  height:           100%;
+  
+  display:          flex;
+  flex-direction:   column;
+  align-items:      center;
+}
+
+.printTitle {
+  display: none;
+}
+
+#chat {
+  height:         100%;
+  width:          min(var(--max-width), 100%);
+  overflow-y:     auto;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+#chat, #mainInfo {
+  scrollbar-width: auto;
+  scrollbar-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, 0);
+
+}
+
+/* Chrome, Edge, and Safari */
+#chat::-webkit-scrollbar, #mainInfo::-webkit-scrollbar {
+  width: 12px;
+}
+
+#chat::-webkit-scrollbar-track, #mainInfo::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+#chat::-webkit-scrollbar-thumb, #mainInfo::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: none;
+}
+
+#messageContainer {
+  display:          flex;
+  flex-direction:   column;
+  margin:           auto;
+  padding-top:      100px;
+  padding-bottom:   10px;
+}
+
+@keyframes appear {
+  0% {
+    box-shadow: 0px 0px 10px var(--gap-small) rgb(173, 216, 230);
+  }
+  100% {
+    box-shadow: 0px 0px 10px -3px rgb(173, 216, 230);
+  }
+}
+
+.message {
+  hyphens:        auto;
+  padding:        20px;
+  padding-bottom: 10px;
+  margin-top:     15px;
+  max-width:      calc(100% - calc(var(--gap-small) + var(--gap-big)));
+  color:          rgb(80, 80, 80);
+  animation:      .5s ease-out 1 forwards appear;
+  box-sizing:     border-box;
+  break-inside:   avoid;
+}
+
+.message.berganza {
+  margin-left:    var(--gap-small);
+  margin-right:   auto;
+  border-radius:  2px 20px 20px 20px;
+  background:     linear-gradient(-45deg, #ffffff 0%, lightcyan 95%, lightcyan 100%);
+}
+
+.message.me {
+  margin-left:    auto;
+  margin-right:   var(--gap-small);
+  border-radius:  20px 2px 20px 20px;
+  background:     linear-gradient(45deg, #ffffff 0%, peachpuff 95%, peachpuff 100%);
+}
+
+.message.me + .message.me {
+  margin-top: 5px;
+}
+
+.message.berganza + .message.berganza {
+  margin-top: 5px;
+}
+
+.message.indicator {
+  padding-bottom: 20px;
+  font-style:     italic;
+  background:     none;
+  animation:      none;
+}
+
+.message > .info {
+  font-size:  12px;
+  text-align: right;
+  margin-top: 5px;
+  color:    rgb(160, 160, 160);
+}
+
+#inputBackground {
+  width:          100%;
+  background:   rgba(0, 0, 0, .1);
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+}
+
+#inputContainer {
+  margin-top:     auto;
+  width:          min(var(--max-width), 100%);
+  display:        flex;
+  flex-direction: row;
+}
+
+#messageInput {
+  padding:        10px;
+  margin:         10px;
+
+  /*width:          calc(min(var(--max-width), 100%) - var(--button-size));*/
+  width:          100%;
+  border:         0px;
+  height:         16px;
+  
+  overflow-y:     hidden;
+
+  resize:         none;
+  border-radius:  5px;
+  
+  font-size:      16px;
+  font-family:    'Roboto', sans-serif;
+  line-height:    100%;
+
+  background:    white;
+}
+
+#sendButton {
+  cursor:         pointer;
+  padding-right:  32px;
+}
+
+.print-color-svg {
+  background-color: #000000;
+  -webkit-mask:     url(../assets/dashicons_printer-24.svg) no-repeat center;
+  mask:             url(../assets/dashicons_printer-24.svg) no-repeat center;
+}
+
+.send-color-svg {
+  background-color: #ffffff;
+  -webkit-mask:     url(../assets/fluent_send-32-filled.svg) no-repeat center;
+  mask:             url(../assets/fluent_send-32-filled.svg) no-repeat center;
+  width:            32px;
+}
+
+#printButton {
+  cursor:         pointer;
+}
+
+#mainInfo {
+  height:         100%;
+  width:          min(var(--max-width), 100%);
+
+  padding:        50px;
+  padding-top:    100px;
+  
+  background:     lightcyan;
+
+  overflow:       auto;
+
+  position:       absolute;
+
+  left:           0;
+  right:          0;
+  top:            -100%;
+
+  margin-left:    auto;
+  margin-right:   auto;
+
+  box-sizing:     border-box;
+
+  display:        flex;
+  flex-direction: column;
+
+  -webkit-transition: transform 0.25s linear;
+  -moz-transition:    transform 0.25s linear;
+  -o-transition:      transform 0.25s linear;
+  -ms-transition:     transform 0.25s linear;
+  transition:         transform 0.25s linear;
+}
+
+.active {
+  transform: translate3d(0, 100%, 0);
+}
+
+hr {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid rgb(177, 177, 177);
+}
