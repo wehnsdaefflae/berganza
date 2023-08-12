@@ -391,8 +391,7 @@ async function requestReply() {
 
   var response;
   try {
-    //response = await fetch("https://ask.berganza.live:443/", {
-    response = await fetch("http://localhost:8080/ask/", {
+    response = await fetch("http://localhost:8000/ask/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
