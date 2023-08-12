@@ -32,7 +32,7 @@ app = FastAPI(redoc_url=None)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8080", "http://127.0.0.1:8080"],
+    allow_origins=["http://localhost:8080", "http://127.0.0.1:8080", "https://berganza.live", "https://www.berganza.live"],
     allow_credentials=True,
     allow_methods=["post"],
     allow_headers=["*"],
